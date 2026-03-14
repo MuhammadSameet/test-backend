@@ -1,0 +1,27 @@
+# HF Spaces / Git
+.git
+.gitignore
+README.md
+TODO.md
+.dockerignore
+.env
+*.log
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+

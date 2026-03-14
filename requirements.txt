@@ -1,0 +1,23 @@
+# FastAPI and Server
+fastapi==0.115.4
+uvicorn[standard]==0.32.0
+
+# Data Validation
+pydantic==2.9.2
+pydantic-settings==2.5.2
+
+# Environment Variables
+python-dotenv==1.0.1
+
+# HTTP Client
+requests==2.32.3
+
+# Qdrant Vector Database
+qdrant-client==1.13.1
+
+# Gradio UI for HF Spaces
+gradio==5.25.4
+
+# Google Gemini (improved client)
+google-generativeai==0.8.3
+
