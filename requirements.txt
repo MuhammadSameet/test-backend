@@ -15,8 +15,8 @@ requests==2.32.3
 # Qdrant Vector Database
 qdrant-client==1.13.1
 
-# Gradio UI for HF Spaces
-gradio==5.25.4
+# Gradio UI for HF Spaces - compatible with Python 3.11
+gradio==4.44.1
 
 # Google Gemini (improved client)
 google-generativeai==0.8.3
