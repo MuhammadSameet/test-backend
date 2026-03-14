@@ -2,7 +2,7 @@ FROM python:3.11-slim AS builder
 
 # Install build deps
 WORKDIR /tmp
-COPY backend/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir --user -r requirements.txt
 
 # Production stage
@@ -20,9 +20,9 @@ COPY --from=builder /root/.local /app/.local
 ENV PATH=/app/.local/bin:$PATH
 
 # Copy app files (minimal)
-COPY --chown=app:app backend/backend_rag.py .
-COPY --chown=app:app backend/chapters ./chapters/
-COPY --chown=app:app backend/requirements.txt .
+COPY --chown=app:app backend_rag.py .
+COPY --chown=app:app chapters ./chapters/
+COPY --chown=app:app requirements.txt .
 
 # Runtime deps only (smaller image)
 RUN pip install --no-cache-dir --user 'requests<3' 'gradio<6'
