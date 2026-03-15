@@ -199,7 +199,8 @@ class RAGSystem:
                 if word in title_lower:
                     score += 15
             
-            matched_words = sum(1 for w in query_words if len(w) >= 3 and w in content_lower)
+            content_words_set = set(w for w in content_lower.split() if len(w) >= 3)
+            matched_words = sum(1 for word in query_words if len(word) >= 3 and word in content_words_set)
             if matched_words >= 2:
                 score += matched_words * 5
             

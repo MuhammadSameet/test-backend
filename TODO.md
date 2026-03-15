@@ -1,28 +1,9 @@
-# HF Spaces Deployment TODO\nStatus: ✅ COMPLETE - Live at https://huggingface.co/spaces/SameetShahid/backend\n\nLatest: Fixed Dockerfile COPY paths, pushed SHA 5858dd3. HF rebuilding now.\n\n## All Steps ✅
+# RAG Chatbot Backend Fix TODO - ✅ FIXED
 
-## Breakdown of Approved Plan (Logical Steps)
-
-### 1. **Update Dependencies** ✅ `requirements.txt` pinned + Gradio/Gemini added
-   - Pin versions in `requirements.txt`
-   - Add Gradio for UI + Gemini client
-   - ✅/❌
-
-### 2. **Fix Core App (`backend_rag.py`)** ✅ Chapters-only load, Gradio UI 7860, FastAPI 8000, Gemini client, HF logs
-
-### 3. **Enhance Dockerfile** ✅ Multi-stage, non-root user, HEALTHCHECK ports 8000/7860
-
-### 4. **Add HF Configs** ✅ `.dockerignore` created
-
-### 4. **Add HF Configs** ✅ README.md updated (deploy guide, secrets table), .dockerignore
-
-### 5. **Test Local Docker** [Pending → Run command above to test]
-   - Expected: Build success, Gradio/FastAPI running, health OK
-   - ✅/❌
-
-### 6. **Final HF Deploy Prep** [Pending]
-   - Verify push to HF repo
-   - Secrets: COHERE_API_KEY, GEMINI_API_KEY (opt), QDRANT_*
-   - ✅/❌
-
-*Updated after each step*
-
+## Steps:
+1. [x] Edit backend/backend_rag.py: Optimized matched_words with set lookup ✅
+2. [ ] Test locally: cd backend && uvicorn backend_rag:app --host 0.0.0.0 --port 8000 --reload
+3. [ ] Verify /query: curl http://localhost:8000/query -H "Content-Type: application/json" -d "{\"query\":\"humanoid balance\"}"
+4. [x] Update TODO.md ✅
+5. [ ] Deploy Railway (git commit/push/up)
+6. [ ] Complete
